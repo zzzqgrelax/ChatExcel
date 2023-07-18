@@ -1,0 +1,80 @@
+﻿<customUI xmlns='http://schemas.microsoft.com/office/2006/01/customui' onLoad='RibbonLoaded'>
+	<ribbon>
+		<tabs>
+			<tab id='ChatExcel' label='ChatExcel' >
+				<group id='User' label='登录'>
+					<button
+						id='LoginButton'
+						getImage='GetImage'
+						getLabel='GetLabel'
+						size='large'
+						onAction='LoginButtonClick'/>
+				</group>
+				<group id='feature' label='功能'>
+					<dynamicMenu
+					invalidateContentOnDrop='true'
+					id='NavigationMenu'
+					label='快捷导航&#x0D;'
+					getContent ='GetNavigations'
+					size='large'
+					getImage='GetImage'/>
+				</group>
+				
+				<group id='Data' label='工具'>
+					<button
+						id='ChatExcelButton'
+						label='对话&#x0D;'
+						getImage='GetImage'
+						size='large'
+						onAction='ChatExcelButtonClick'/>
+				</group>
+				
+				<group id='Tool' label='辅助'>
+					<menu id='UpdateButton'
+						  label='更新'
+						  getImage='GetImage'
+						  size="large"
+						  description='数据更新'
+						  screentip ='数据更新'
+						  supertip='更新当前页或当前工作簿下所有工作表里的通联元素数据，包括指标库数据、单值函数数据以及序列数据等'>
+						<button id='UpdateActiveSheetButton'
+								label='更新当前页&#x0D;'
+								onAction='UpdateActiveSheetButtonClick'
+								description='更新当前页'
+								screentip ='更新当前页'
+								supertip='更新当前页里的通联元素数据，包括指标库数据、单值函数数据以及序列数据等'/>
+						<button id='UpdateWorkBookSheetsButton'
+								label='更新所有页&#x0D;'
+								onAction='UpdateWorkBookSheetsButtonClick'
+								description='更新所有页'
+								screentip ='更新所有页'
+								supertip='更新当前工作簿里所有工作页里的通联元素数据，包括指标库数据、单值函数数据以及序列数据等'/>
+					</menu>
+
+					<menu id="SaveCopyButton"
+						  label="保存快照&#x0D;"
+						  getImage='GetImage'
+						  size="large"
+						  description='保存快照'
+						  screentip ='保存快照'
+						  supertip='保存当前页或当前工作簿下里的数据，保存成数值以及文本的形式，供外发或其他用途。保存的快照数据能脱离插件显示，但不支持更新'>
+						<button id='SaveCopyActiveSheetButton'
+								label='保存当前页&#x0D;'
+								onAction='SaveCopyButtonClick'
+								description='保存当前页'
+								screentip ='保存当前页'
+								supertip='保存当前页里的数据，保存成数值以及文本的形式，供外发或其他用途。保存的快照数据能脱离插件显示，但不支持更新'/>
+						<button id='SaveCopyWorkBookSheetsButton'
+								label='保存当前文档&#x0D;'
+								onAction='SaveCopyButtonClick'
+								description='保存当前文档'
+								screentip ='保存当前文档'
+								supertip='保存当前文档里的数据，保存成数值以及文本的形式，供外发或其他用途。保存的快照数据能脱离插件显示，但不支持更新'/>
+					</menu>
+
+					
+				</group >
+			</tab>
+		</tabs>
+	</ribbon>
+</customUI>
